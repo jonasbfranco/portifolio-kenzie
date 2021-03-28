@@ -1,0 +1,386 @@
+/*
+Theme Name: Start sua carreira
+Theme URI: https://lexordnas.github.io/cv-portifolio
+Author: Alexsandro da Silva Marques
+Description: Tema feito para apresentação de página em formato HomePage.
+Version: 1.0
+
+---------------------------------------------
+BASE STRUCTURE
+---------------------------------------------
+**** DECLARATION OF VARIABLES
+**** GENERAL STYLES
+**** BODY
+**** HEADER
+**** FOOTER
+**** HOMEPAGE
+**** EXTRAS
+**** @MEDIA
+*/
+
+/* GENERAL STYLES */
+html, body, figure, img, div, input, textarea, p, h1, h2, h3, h4, h5, h6, ul, li, a, main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none
+}
+
+.column {
+    flex-basis: 49%
+}
+
+:root{
+    --colorBackgroundPrimary: #136c96;
+    --colorBackgroundSecondary: #04293a;
+    --colorBackgroundDark:#0e0e0e;
+    --colorTextPrimary:#636363;
+    --colorTextSecondary:#000
+
+}
+
+.hidden {
+    display: none
+}
+
+/* BODY */
+body {
+    font-family: 'Open Sans', sans-serif
+}
+
+/* HEADER */
+header {
+    background-color: var(--colorBackgroundPrimary);
+    padding: 20px 20px 0
+}
+
+header .container {
+    background-color: white
+}
+
+header .line {
+    align-items: center
+}
+
+header .column-left {
+    flex-basis: 30%
+}
+
+header .column-right {
+    flex-basis: 60%;
+    text-align: center
+}
+
+header .column img {
+    max-width: 100%;
+    z-index: 1
+}
+
+header .column h1 {
+    font-size: 1.5rem;
+    color:var(--colorTextSecondary)
+}
+
+header .column p {
+    font-size: 1rem;
+    color:var(--colorTextPrimary)
+}
+
+header .column ul {
+    margin: 16px 0 0
+}
+
+header .column ul li:not(:last-child) {
+    margin: 0 0 5px
+}
+
+header .column ul li a {
+    font-size: 1rem;
+    color:var(--colorTextSecondary)
+}
+
+/* FOOTER */
+footer {
+    background-color:var(--colorBackgroundSecondary)
+}
+
+footer .container {
+    padding: 20px 20px 20px
+}
+
+footer nav ul li a {
+    color: white
+}
+
+footer nav .contact-info li {
+    margin: 0 0 15px;
+    padding-left: 20px
+}
+
+footer nav .social-networks {
+    border-top: 1px solid rgb(255 255 255 / 10%);
+    margin: 20px 0 50px;
+    padding: 50px 0 0;
+    text-align: center
+}
+
+footer nav .social-networks li {
+    margin: 15px 28px;
+    text-align: center;
+    display: inline-block
+}
+
+footer nav .social-networks li a img {
+    width: 40px;
+    transition: .2s
+}
+
+footer nav .social-networks li a:hover img{
+    transform: scale(1.1) translateY(-2px)
+}
+
+/* HOMEPAGE */
+main .column{
+    padding: 20px
+}
+
+main .column section {
+    border-bottom: 0.1px solid #136c96;
+    margin: 0 0 20px;
+    min-height: 187px;
+    color:var(--colorTextSecondary);
+    padding: 20px;
+    -webkit-box-shadow: 4px 6px 26px -15px rgba(19,108,150,1);
+    -moz-box-shadow: 4px 6px 26px -15px rgba(19,108,150,1);
+    box-shadow: 4px 6px 26px -15px rgba(19,108,150,1)
+}
+
+main .column section h2 {
+    font-size: 1.3rem;
+    margin: 0 0 15px
+}
+
+main .column section p {
+    font-size: 0.9rem;
+    color: var(--colorTextPrimary);
+    line-height: 1.8
+}
+
+main .column section ul li {
+    margin: 0 0 12px
+}
+
+main .column section ul li h3 {
+    font-size: 1.1rem
+}
+
+main .column section ul li strong {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 5px 0 10px;
+    display: inline-block
+}
+
+/* EXTRAS */
+.activate-dark {
+    width: 50px;
+    height: 50px;
+    display: none
+}
+
+header .container {
+    position: relative
+}
+
+label {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 52px;
+    height: 30px;
+    background-color: var(--colorBackgroundSecondary);
+    border-radius: 20px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    z-index: 1000
+}
+
+label span {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #ffffff;
+    border-radius: 100%;
+    transition: all ease .3s
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    margin-top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #136c96;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 9px rgb(219, 219, 219)
+  }
+  
+  .button:hover {
+      background-color: #136c96b4
+}
+  
+  .button:active {
+    background-color: #136c96d8;
+    box-shadow: 0 5px rgb(219, 219, 219);
+    transform: translateY(4px)
+  }
+
+.activate-dark:checked ~ .dark-mode label{
+    background-color: #136c96
+}
+.activate-dark:checked ~ .dark-mode label span{
+    background-color: white;
+    transform: translateX(21px);
+    transition: all ease .3s
+}
+
+.activate-dark:checked ~ .dark-mode {
+    --colorBackgroundPrimary: #000;
+    --colorBackgroundSecondary: #000;
+    --colorTextPrimary:#fff;
+    --colorTextSecondary:#fff
+}
+
+.activate-dark:checked ~ .dark-mode header {
+    background-color:var(--colorBackgroundSecondary)
+}
+
+.activate-dark:checked ~ .dark-mode header .container {
+    background-color:var(--colorBackgroundDark)
+}
+
+.activate-dark:checked ~ .dark-mode  .container {
+    background-color:var(--colorBackgroundDark)
+}
+
+.activate-dark:checked ~ .dark-mode main {
+    background-color:var(--colorBackgroundSecondary) 
+} 
+
+@keyframes increaseWidth {
+    from{
+        width: 0
+    }
+    to{
+        width: 100%
+    }
+}
+
+@keyframes increaseHeight{
+    from{
+        height: 0
+    }
+    to{
+        height: 100%
+    }
+}
+
+
+/* @MEDIA */
+@media only screen and (min-width: 768px) {
+    .line {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between
+    }
+
+    footer nav .social-networks {
+        display: flex;
+        justify-content: center
+    }
+
+    header {
+        padding: 30px 0 0
+    }
+
+    header .column img {
+        max-width: 250px;
+        border-radius: 100%
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1125px;
+        margin: 0 auto;
+        padding: 30px
+    }
+
+    header .column-right {
+        text-align: left
+    }
+
+    main .column section {
+        border: 1.5px solid #61b4db67;
+        /*border: 2px solid transparent;*/
+        padding: 20px;
+        position: relative
+    }
+
+    main .column section span{
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border: 2.6px solid transparent
+    }
+
+    main .column section .top-right{
+        top: -2px;
+        left: -2px;
+        animation-name: increaseWidth, increaseHeight;
+        animation-duration: 1s, 1s;
+        animation-delay: 2s, 3s;
+        animation-fill-mode: forwards;
+        border-top-color: #61b4db98;
+        border-right-color: #61b4db98
+    }
+
+    main .column section .bottom-left {
+        bottom: -2px;
+        right: -2px;
+        animation-name: increaseWidth, increaseHeight;
+        animation-duration: 1s, 1s;
+        animation-delay: 4s, 5s;
+        animation-fill-mode: forwards;
+        border-bottom-color: #61b4db98;
+        border-left-color: #61b4db98
+    }
+
+    main .column {
+        padding: 0
+    }
+
+    footer nav .social-networks li {
+        margin: 0 14px;
+        text-align: center;
+        display: initial
+    }
+    
+    footer .container {
+        padding: 40px 20px 20px
+    }
+}
+
+@media only screen and (min-width: 991px) {
+    header .column-right{
+        flex-basis: 70%
+    }
+}
